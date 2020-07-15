@@ -49,6 +49,25 @@ void appendAfterNode(node_t *indexNode, node_t *insertNode) {
     indexNode->next = insertNode;
 }
 
+// Removes node from list
+void removeNode(node_t **head, node_t *removal) {
+        
+        if (*head == removal) {
+            *head = removal->next;
+            return;
+        }
+        else {
+                node_t *temp = *head;
+                while (temp != NULL && temp->next != removal) { // Traverses through list
+                        temp = temp->next; 
+                }
+                if (temp == NULL) return; // Couldn't find node, return
+                temp->next = removal->next;
+                removal->next = NULL;
+        }
+        return;
+}
+
 // Locates node with given value in list
 node_t *findNode(node_t *head, int val) {
     node_t *temp = head;
