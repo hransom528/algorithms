@@ -4,14 +4,7 @@
 /** Includes **/
 #include <stdio.h>
 #include <stdlib.h>
-
-/** Defines **/
-// Node type, one item in list
-struct node {
-        int value;
-        struct node* next;
-};
-typedef struct node node_t;
+#include "cLinkedList.h"
 
 /** Functions **/
 // Prints out linked list
