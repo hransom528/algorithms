@@ -1,5 +1,7 @@
 cHashTableOpenAddress: cHashTableOpenAddress.c
-	gcc -o cHashTableOpenAddress cHashTableOpenAddress.c
 
-clean: cHashTableOpenAddress
-	rm cHashTableOpenAddress
+cHashTableExternalChain: cHashTableExternalChain.c
+
+.PHONY : clean
+clean: 
+	rm cHashTableOpenAddress cHashTableExternalChaina
