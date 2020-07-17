@@ -1,3 +1,9 @@
+<div>
+  <a href="https://github.com/commanderHR1/mcp9808-dataScience/blob/master/LICENSE" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</div>
+
 # algorithms
 Implementations of common algorithms and data structures. Used as an educational tool. Feel free to share!
 
