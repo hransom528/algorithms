@@ -11,34 +11,41 @@
 #define EMPTY -1
 #define STACK_EMPTY INT_MIN
 
-int stackArr[STACK_LENGTH]; 	// Array that contains stack structure
-int top = EMPTY; 	    	// Index of top item
+// Stack implementation
+typedef struct{
+	int stackArr[STACK_LENGTH];	// Array that contains stack structure
+	int top;			// Index of top item
+} stack;
+    	
 
 /** Functions **/
 // Adds (pushes) to top of stack
-bool push(int item) {
-	if (top >= STACK_LENGTH - 1) return false; // If stack is full
-	top++;					   // Updates stack index
-	stackArr[top] = item;			   // Adds item
+bool push(stack *myStack, int item) {
+	if (myStack->top >= STACK_LENGTH - 1) return false; 	// If stack is full
+	myStack->top++;				     		// Updates stack index
+	myStack->stackArr[myStack->top] = item;			// Adds item
 	return true;
 }
 
 // Removes (pops) top of stack
-int pop() {
-	if (top == EMPTY) return STACK_EMPTY;	   // If stack is empty
-	top--;					   // Decrement top
-	return stackArr[top + 1];		   // Return popped item
+int pop(stack *myStack) {
+	if (myStack->top == EMPTY) return STACK_EMPTY;	   	// If stack is empty
+	myStack->top--;				   	   	// Decrement top
+	return myStack->stackArr[myStack->top + 1];	   	// Return popped item
 	
 }
 
 /** MAIN **/
 int main () {
-	push(10);
-	push (27);
-	push (82);
+	stack s;
+	s.top = EMPTY;
+	
+	push(&s, 27);
+	push(&s, 15);
+	push(&s, 36);
 	
 	int t;
-	while ((t = pop()) != STACK_EMPTY) {
+	while ((t = pop(&s)) != STACK_EMPTY) {
 		printf("t = %d\n", t);
 	}
 	return 0;

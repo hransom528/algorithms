@@ -15,26 +15,26 @@ typedef struct node{
 	int value;
 	struct node *next;
 } node;
- 
-node *head = NULL; // Linked List head
+
+typedef node *stack; 	// Stack implementation
 
 /** Functions **/
 // Adds (pushes) to top of stack
-bool push(int item) {
+bool push(stack *myStack, int item) {
 	node *newNode = malloc(sizeof(node));	   // Allocates new item
 	if (newNode == NULL) return false; 	   // Malloc failed
 	newNode->value = item;			   // Adds value
-	newNode->next = head;			   // Orders node at head
-	head = newNode;
+	newNode->next = *myStack;		   // Orders node at stack head
+	*myStack = newNode;
 	return true;
 }
 
 // Removes (pops) top of stack
-int pop() {
-	if (head == NULL) return STACK_EMPTY;	   // If stack is empty
-	int result = head->value;		   // Gets result from head
-	node *tmp = head;			   // Gets pointer to head
-	head = head->next;			   // Moves head to next item
+int pop(stack *myStack) {
+	if (*myStack == NULL) return STACK_EMPTY;  // If stack is empty
+	int result = (*myStack)->value;		   // Gets result from head
+	node *tmp = *myStack;			   // Gets pointer to head
+	*myStack = (*myStack)->next;		   // Moves head to next item
 	free(tmp);				   // Frees previous head
 	return result;				   // Return popped item
 	
@@ -42,12 +42,14 @@ int pop() {
 
 /** MAIN **/
 int main () {
-	push(10);
-	push (27);
-	push (82);
+	stack s = NULL;
+	
+	push(&s, 27);
+	push(&s, 15);
+	push(&s, 36);
 	
 	int t;
-	while ((t = pop()) != STACK_EMPTY) {
+	while ((t = pop(&s)) != STACK_EMPTY) {
 		printf("t = %d\n", t);
 	}
 	return 0;
