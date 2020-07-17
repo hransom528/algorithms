@@ -1,5 +1,5 @@
 <div>
-  <a href="https://github.com/commanderHR1/mcp9808-dataScience/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/commanderHR1/algorithms/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </div>
