@@ -77,7 +77,19 @@ void removeNode(node_t **head, node_t *removal) {
         }
         removal->next = NULL;
         removal->prev = NULL;
+        free(removal);
         return;
+}
+
+// Clears entire linked list
+void clearList(node_t **head) {
+    node_t *current = *head;
+    node_t *next = (*head)->next;
+    while (next != NULL) {  
+        removeNode(head, current);
+        current = next;
+        next = current->next;
+    }
 }
 
 // Locates node with given value in list
@@ -119,9 +131,14 @@ int main() {
     // Removes 13 and head
     removeNode(&head, temp);
     removeNode(&head, head);
+    printf("Removed node with value 13 and head node\n");
     
     // Prints out list after removal
     printList(head);
+    
+    // Clears list
+    clearList(&head);
+    printf("List cleared");
     
     return 0;
 }
