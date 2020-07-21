@@ -6,7 +6,7 @@
 #include <stdint.h>	// For int_fast64_t
 
 /** Defines **/
-#define MAX_NUM 20
+#define MAX_NUM 20	// Maximum input before overflow
 
 /** Functions **/
 int_fast64_t findFactorial(short num) {
@@ -27,7 +27,7 @@ int_fast64_t findFactorial(short num) {
 int main(int argc, char **argv) {
 	// Input
 	short temp;
-	printf("Enter number you wish to calculate the factorial for: ");
+	printf("Enter the number you wish to calculate the factorial for: ");
 	scanf("%hi", &temp);
 	while (temp > MAX_NUM) {
 		printf("Please enter %d or lower: ", MAX_NUM);
