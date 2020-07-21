@@ -16,10 +16,11 @@ void printVector(vector<int> *v) {
 
 int main() {
 	vector<int> nums;	// Built-in data structure
+	nums.reserve(5);	// Allocates space in vector, minimizes copying
 	
 	// Adds 5 ints to vector
 	for (int i = 0; i < 5; i++) {
-		nums.push_back(i); // Appends i to end of list
+		nums.emplace_back(i); // Constructs i at end of list
 		
 	}
 	printVector(&nums);
