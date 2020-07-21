@@ -14,7 +14,7 @@
 char* revStr(const char str[]) {
 	int len = (int) strlen(str);				// Gets length of string param
 	char *retStr = malloc(len * sizeof(char));	// Allocates space for retStr on heap
-	int count = 0;							// Counter for forward iteration
+	int count = 0;                              // Counter for forward iteration
 
 	// Iterates backwards through str
 	for (int i = len - 1; i >= 0; i--) {
