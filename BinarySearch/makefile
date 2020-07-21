@@ -1,4 +1,9 @@
+all: cBinSearch javaBinSearch.class
+
 cBinSearch: cBinSearch.c
 
-clean: cBinSearch
-	rm cBinSearch
+javaBinSearch.class: javaBinSearch.java
+	javac javaBinSearch.java
+
+clean: cBinSearch javaBinSearch.class
+	rm cBinSearch javaBinSearch.class
