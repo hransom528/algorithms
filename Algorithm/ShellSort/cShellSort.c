@@ -39,12 +39,12 @@ void printArr(int arr[], int len) {
 
 /** MAIN **/
 int main() {
-	int nums[] = [7, 4, 2, 6, 10, 3, 5, 9, 1, 8];
+	int nums[] = {7, 4, 2, 6, 10, 3, 5, 9, 1, 8};
 	int len = sizeof(nums) / sizeof(int);
-	printf("Initial array: ");
+	printf("Initial array: \n");
 	printArr(nums, len);
 
 	shellSort(nums, len);
-	printf("Sorted array: ");
+	printf("Sorted array: \n");
 	printArr(nums, len);
 }
