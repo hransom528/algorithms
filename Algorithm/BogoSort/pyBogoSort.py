@@ -18,4 +18,3 @@ l = [4, 2, 5, 3, 1]
 print("Initial list: " + str(l))
 bogoSort(l)
 print("Sorted list: " + str(l))
-
